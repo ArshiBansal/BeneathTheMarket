@@ -1,4 +1,4 @@
-# Data Dictionary — BeneathTheMarket
+# Data Dictionary
 
 **Document:** `docs/data_dictionary.md`  
 **Project:** BeneathTheMarket  

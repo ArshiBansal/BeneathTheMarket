@@ -1,4 +1,4 @@
-# NLP Source Notes — BeneathTheMarket
+# NLP Source Notes
 
 **Document:** `docs/nlp_source_notes.md`  
 **Project:** BeneathTheMarket  

@@ -1,4 +1,4 @@
-# Evaluation Protocol — BeneathTheMarket
+# Evaluation Protocol
 
 **Document:** `docs/evaluation_protocol.md`  
 **Project:** BeneathTheMarket  
