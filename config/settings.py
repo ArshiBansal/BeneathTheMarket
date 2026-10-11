@@ -1,3 +1,4 @@
+# config/settings.py
 """
 Central application settings.
 
@@ -24,7 +25,7 @@ class Settings:
     """Immutable-ish settings object.  Instantiate once via get_settings()."""
 
     # ------------------------------------------------------------------
-    # Paths
+    # Paths (always Path objects)
     # ------------------------------------------------------------------
     PROJECT_ROOT: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket"
     DATA_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data"
@@ -64,10 +65,10 @@ class Settings:
     # ------------------------------------------------------------------
     # Data retrieval defaults
     # ------------------------------------------------------------------
-    DEFAULT_HISTORY_PERIOD: str = "5y"          # yfinance period string
-    DEFAULT_INTERVAL: str = "1d"                # daily bars for persistence
-    RECENT_INTERVAL: str = "1h"                 # for hourly refresh when supported
-    REQUEST_TIMEOUT: int = 30                   # seconds
+    DEFAULT_HISTORY_PERIOD: str = "5y"
+    DEFAULT_INTERVAL: str = "1d"
+    RECENT_INTERVAL: str = "1h"
+    REQUEST_TIMEOUT: int = 30
     MAX_RETRIES: int = 3
 
     def __post_init_paths(self) -> None:
