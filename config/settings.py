@@ -27,14 +27,14 @@ class Settings:
     # Paths
     # ------------------------------------------------------------------
     PROJECT_ROOT: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket"
-    DATA_DIR: Path = PROJECT_ROOT / "data"
-    RAW_DATA_DIR: Path = DATA_DIR / "raw"
-    PROCESSED_DATA_DIR: Path = DATA_DIR / "processed"
-    MODELS_DIR: Path = DATA_DIR / "models"
-    ML_MODELS_DIR: Path = MODELS_DIR / "ml"
-    DL_MODELS_DIR: Path = MODELS_DIR / "dl"
-    REPORTS_DIR: Path = PROJECT_ROOT / "reports"
-    LOGS_DIR: Path = PROJECT_ROOT / "logs"
+    DATA_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data"
+    RAW_DATA_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data/raw"
+    PROCESSED_DATA_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data/processed"
+    MODELS_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data/models"
+    ML_MODELS_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data/models/ml"
+    DL_MODELS_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/data/models/dl"
+    REPORTS_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/reports"
+    LOGS_DIR: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket/logs"
 
     # ------------------------------------------------------------------
     # MongoDB (LOCAL ONLY)
