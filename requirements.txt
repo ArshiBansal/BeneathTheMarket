@@ -1,30 +1,56 @@
-# Core data and market-data access
-numpy>=1.26,<3.0
-pandas>=2.1,<4.0
-yfinance>=0.2.40,<1.0
+# Technology & Fintech Market Intelligence and Regime Analyzer
+# Python 3.10+ recommended
 
-# Local MongoDB access and environment configuration
-pymongo>=4.8,<5.0
-python-dotenv>=1.0,<2.0
+# Core data & scientific stack
+numpy>=1.26.0
+pandas>=2.1.0
+scipy>=1.11.0
 
-# Analysis and machine learning
-scikit-learn>=1.5,<2.0
-scipy>=1.13,<2.0
-statsmodels>=0.14,<1.0
-joblib>=1.4,<2.0
+# Market data
+yfinance>=0.2.36
 
-# Deep learning (PyTorch)
-torch>=2.4,<3.0
+# Database (local MongoDB only)
+pymongo>=4.6.0
 
-# Streamlit app and visualizations
-streamlit>=1.38,<2.0
-plotly>=5.24,<7.0
-matplotlib>=3.9,<4.0
-seaborn>=0.13,<1.0
+# Machine Learning
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.1.0
+catboost>=1.2.0
 
-# Notebook workflow
-jupyterlab>=4.2,<5.0
-ipykernel>=6.29,<8.0
+# Deep Learning
+torch>=2.1.0
+torchvision>=0.16.0
 
-# Tests
-pytest>=8.3,<9.0
+# NLP (non-news text only)
+nltk>=3.8.1
+spacy>=3.7.0
+sentence-transformers>=2.2.2
+
+# Feature engineering / time-series helpers
+ta>=0.11.0
+statsmodels>=0.14.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+
+# Streamlit application
+streamlit>=1.29.0
+streamlit-option-menu>=0.3.6
+
+# Utilities
+python-dotenv>=1.0.0
+joblib>=1.3.0
+tqdm>=4.66.0
+pytz>=2023.3
+python-dateutil>=2.8.2
+
+# Optional but useful for notebooks
+ipykernel>=6.27.0
+jupyterlab>=4.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
