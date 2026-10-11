@@ -26,7 +26,7 @@ class Settings:
     # ------------------------------------------------------------------
     # Paths
     # ------------------------------------------------------------------
-    PROJECT_ROOT: Path = "C:\Users\hp\Documents\GitHub\BeneathTheMarket"
+    PROJECT_ROOT: Path = "C:/Users/hp/Documents/GitHub/BeneathTheMarket"
     DATA_DIR: Path = PROJECT_ROOT / "data"
     RAW_DATA_DIR: Path = DATA_DIR / "raw"
     PROCESSED_DATA_DIR: Path = DATA_DIR / "processed"
