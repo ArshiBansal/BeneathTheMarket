@@ -1,0 +1,30 @@
+# Core data and market-data access
+numpy>=1.26,<3.0
+pandas>=2.1,<4.0
+yfinance>=0.2.40,<1.0
+
+# Local MongoDB access and environment configuration
+pymongo>=4.8,<5.0
+python-dotenv>=1.0,<2.0
+
+# Analysis and machine learning
+scikit-learn>=1.5,<2.0
+scipy>=1.13,<2.0
+statsmodels>=0.14,<1.0
+joblib>=1.4,<2.0
+
+# Deep learning (PyTorch)
+torch>=2.4,<3.0
+
+# Streamlit app and visualizations
+streamlit>=1.38,<2.0
+plotly>=5.24,<7.0
+matplotlib>=3.9,<4.0
+seaborn>=0.13,<1.0
+
+# Notebook workflow
+jupyterlab>=4.2,<5.0
+ipykernel>=6.29,<8.0
+
+# Tests
+pytest>=8.3,<9.0
