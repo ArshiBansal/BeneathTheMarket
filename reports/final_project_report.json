@@ -1,0 +1,230 @@
+{
+  "title": "Technology & Fintech Market Intelligence and Regime Analyzer \u2013 Final Report",
+  "generated_at": "2026-10-12T10:05:19.543545+00:00",
+  "project_level": "Intermediate",
+  "mongodb": {
+    "reachable": true,
+    "database": "tech_fintech_market_intel",
+    "collections": [
+      "refresh_status",
+      "market_data",
+      "company_metadata",
+      "analysis_results",
+      "predictions",
+      "model_evaluations"
+    ],
+    "n_analysis_results": 11,
+    "n_model_evaluations": 14,
+    "n_market_data": 47690,
+    "n_predictions": 0
+  },
+  "success_criteria": [
+    {
+      "id": "C1",
+      "criterion": "At least 30 companies across the six categories pass data-availability checks",
+      "target": "\u2265 30 tickers, 6 categories",
+      "actual": "38 tickers, 6 categories",
+      "passed": true
+    },
+    {
+      "id": "C2",
+      "criterion": "Notebook and Streamlit can run independently and connect to local MongoDB",
+      "target": "Local MongoDB reachable; no Atlas",
+      "actual": "MongoDB reachable=True; URI=mongodb://localhost:27017",
+      "passed": true
+    },
+    {
+      "id": "C3",
+      "criterion": "Daily persistence updates do not create duplicate records",
+      "target": "Unique index on ticker+interval+timestamp",
+      "actual": "Indexes ensured via ensure_indexes(); upserts used in pipeline",
+      "passed": true
+    },
+    {
+      "id": "C4",
+      "criterion": "Evaluation uses chronological splits and includes baselines",
+      "target": "Chronological train/val/test + \u22651 baseline",
+      "actual": "Evaluation report present=True; baselines in leaderboard=True",
+      "passed": true
+    },
+    {
+      "id": "C5",
+      "criterion": "Model comparison reports transparently (including when complex models lose)",
+      "target": "Leaderboard + baseline comparison",
+      "actual": "Leaderboard rows=12; eval report=True",
+      "passed": true
+    },
+    {
+      "id": "C6",
+      "criterion": "NLP component has documented non-news source and clear purpose",
+      "target": "Non-news text only; source + limitations recorded",
+      "actual": "NLP summary present=True; coverage=100.0%",
+      "passed": true
+    },
+    {
+      "id": "C7",
+      "criterion": "App displays data freshness and does not label delayed data as real-time",
+      "target": "refresh_status collection + UI banner (Streamlit)",
+      "actual": "refresh_status used by pipeline; Streamlit status section in app design",
+      "passed": true
+    }
+  ],
+  "n_criteria_passed": 7,
+  "n_validated_tickers": 38,
+  "n_categories": 6,
+  "feature_meta": {
+    "n_rows": 45106,
+    "n_features": 39,
+    "horizon": 5,
+    "train_end": "2025-05-02",
+    "val_end": "2026-01-16"
+  },
+  "modelling": {
+    "n_ml_regression": 5,
+    "n_dl": 4,
+    "leaderboard_top": [
+      {
+        "family": "baseline",
+        "model": "baseline_historical_average",
+        "test_rmse": 0.0851119129791375,
+        "test_mae": 0.0609415505432566,
+        "test_r2": -0.0060688735971234,
+        "dir_acc": 0.5292726197516262,
+        "source": "ml_experiments",
+        "rank": 1
+      },
+      {
+        "family": "baseline",
+        "model": "baseline_persistence",
+        "test_rmse": 0.0855647950295173,
+        "test_mae": 0.0629508667812441,
+        "test_r2": -0.0168039805292368,
+        "dir_acc": 0.5292726197516262,
+        "source": "ml_experiments",
+        "rank": 2
+      },
+      {
+        "family": "dl",
+        "model": "transformer",
+        "test_rmse": 0.0867502485024015,
+        "test_mae": 0.0612117946147918,
+        "test_r2": -0.0394573211669921,
+        "dir_acc": 0.4907539118065434,
+        "source": "dl_experiments",
+        "rank": 3
+      },
+      {
+        "family": "ml",
+        "model": "catboost",
+        "test_rmse": 0.0869168431828223,
+        "test_mae": 0.0622211155212652,
+        "test_r2": -0.0491918243785469,
+        "dir_acc": 0.5147841513897102,
+        "source": "ml_experiments",
+        "rank": 4
+      },
+      {
+        "family": "ml",
+        "model": "ridge",
+        "test_rmse": 0.0869481560544098,
+        "test_mae": 0.0619372623536925,
+        "test_r2": -0.0499479293071738,
+        "dir_acc": 0.5180366646954465,
+        "source": "ml_experiments",
+        "rank": 5
+      },
+      {
+        "family": "ml",
+        "model": "random_forest",
+        "test_rmse": 0.0871126417710297,
+        "test_mae": 0.062548367751478,
+        "test_r2": -0.0539242020865882,
+        "dir_acc": 0.5199586043761089,
+        "source": "ml_experiments",
+        "rank": 6
+      },
+      {
+        "family": "dl",
+        "model": "gru",
+        "test_rmse": 0.0874486086846227,
+        "test_mae": 0.0618156567215919,
+        "test_r2": -0.0562604665756225,
+        "dir_acc": 0.5151137980085349,
+        "source": "dl_experiments",
+        "rank": 7
+      },
+      {
+        "family": "dl",
+        "model": "lstm",
+        "test_rmse": 0.0880943797563639,
+        "test_mae": 0.0622430704534053,
+        "test_r2": -0.0719181299209594,
+        "dir_acc": 0.4998221906116643,
+        "source": "dl_experiments",
+        "rank": 8
+      },
+      {
+        "family": "ml",
+        "model": "lightgbm",
+        "test_rmse": 0.090214917962985,
+        "test_mae": 0.0649371789587277,
+        "test_r2": -0.1303260225041924,
+        "dir_acc": 0.4976345357776464,
+        "source": "ml_experiments",
+        "rank": 9
+      },
+      {
+        "family": "ml",
+        "model": "xgboost",
+        "test_rmse": 0.0907764330966915,
+        "test_mae": 0.0654891291469528,
+        "test_r2": -0.1444405484584383,
+        "dir_acc": 0.4940863394441159,
+        "source": "ml_experiments",
+        "rank": 10
+      }
+    ],
+    "best_overall": {
+      "model": "baseline_historical_average",
+      "family": "baseline",
+      "test_rmse": 0.0851119129791375,
+      "dir_acc": 0.5292726197516262
+    }
+  },
+  "regime": {
+    "available": true,
+    "n_regimes": 4,
+    "silhouette": 0.15593888342286844
+  },
+  "nlp": {
+    "available": true,
+    "text_coverage_pct": 100.0,
+    "backend": "sentence_transformers"
+  },
+  "limitations": [
+    "yfinance history length and quality vary by ticker; some series are shorter than others.",
+    "Corporate actions and missing bars can affect feature quality despite cleaning.",
+    "Deep-learning models were trained with modest capacity suitable for an intermediate project.",
+    "NLP uses only non-news company/category descriptions; coverage is incomplete for some tickers.",
+    "No transaction costs, slippage or portfolio constraints are modelled.",
+    "Results are for academic analysis only and are not investment advice.",
+    "Streamlit UI freshness indicators depend on refresh_status being updated by a running process.",
+    "Some tickers may have shorter histories; cross-company comparisons use aligned windows where possible."
+  ],
+  "deliverables": [
+    "validated_tickers.csv",
+    "feature_panel.parquet",
+    "feature_metadata.json",
+    "ml_experiment_results.json",
+    "dl_experiment_results.json",
+    "model_leaderboard.csv",
+    "final_evaluation_report.json",
+    "nlp_component_summary.json",
+    "regime_discovery_diagnostics.json",
+    "final_project_report.md",
+    "final_project_report.json",
+    "notebooks 01-09",
+    "Streamlit app (app/)",
+    "local MongoDB database"
+  ]
+}
