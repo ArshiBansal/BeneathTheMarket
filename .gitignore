@@ -120,3 +120,6 @@ reports/*.png
 reports/*.svg
 !reports/.gitkeep
 docs/_build/
+notebooks/catboost_info/
+notebooks/catboost_info
+notebooks/catboost_info/*
